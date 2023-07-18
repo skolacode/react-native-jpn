@@ -18,8 +18,15 @@ export default function App() {
       </View>
 
       {/* Pofile details container */}
-      <View style={{ backgroundColor: 'blue' }}> 
+      <View style={styles.profileContainer}> 
         
+        <Text style={styles.labelText}>Email: 
+          <Text style={styles.valueText}>iam@burhan3759.com</Text>
+        </Text>
+        
+        <Text>Gender: <Text>Male</Text></Text>
+        
+        <Text>Hobby: <Text>Coding..</Text></Text>
       </View>
 
       <StatusBar style="auto" />
@@ -31,15 +38,24 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: 20,
-    backgroundColor: '#f2f2f2',
+    backgroundColor: 'white',
   },
   avatarContainer: {
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: 'lightyellow',
+    flex: 0.5,
   },
-  heroTitle: {
-    fontSize: 30,
-    color: 'blue',
+  profileContainer: {
+    flex: 1,
+    padding: 20
   },
-  avatarLogo: { width: 50, height: 50 }
+  labelText: {
+    fontSize: 12,
+    color: '#4d4d4d'
+  },
+  valueText: {
+    fontSize: 14,
+    color: 'blue'
+  }
 });
