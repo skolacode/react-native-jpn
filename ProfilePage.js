@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 
 export default function App() {
   return (
@@ -19,7 +19,6 @@ export default function App() {
 
       {/* Pofile details container */}
       <View style={styles.profileContainer}> 
-        
         <Text style={styles.labelText}>Email: 
           <Text style={styles.valueText}> iam@burhan3759.com</Text>
         </Text>
@@ -32,6 +31,10 @@ export default function App() {
           <Text style={styles.valueText}> Coding..</Text>
         </Text>
       </View>
+
+      <TouchableOpacity style={styles.button} onPress={() => {}}>
+        <Text style={styles.todoText}>TODOS</Text>
+      </TouchableOpacity>
 
       <StatusBar style="auto" />
     </View>
@@ -72,5 +75,18 @@ const styles = StyleSheet.create({
   valueText: {
     fontSize: 17,
     color: '#171717',
+  },
+  button: {
+    backgroundColor: '#d6d6d6',
+    margin: 10,
+    marginBottom: 20,
+    padding: 15,
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  todoText: {
+    fontWeight: '600',
+    color: '#3e3f40'
   }
 });
