@@ -4,10 +4,10 @@ import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-nativ
 
 export default () => {
 
-
   const [todoList, setTodoList] = useState([])
 
   const todoRef = useRef('')
+  const todoTextRef = useRef(null)
 
   const onTextChange = (text) => { 
     todoRef.current = text
@@ -17,8 +17,7 @@ export default () => {
     console.log('Todo is clicked: ', todoRef.current)
     // spread operator
     setTodoList([todoRef.current, ...todoList])
-
-    // setTodoList(['RN', 'java', 'php'])
+    todoTextRef.current.clear()
   }
 
   return (
@@ -26,6 +25,7 @@ export default () => {
       <Text>This is Todo Page</Text>
 
       <TextInput
+        ref={todoTextRef}
         style={styles.input}
         onChangeText={onTextChange}
         placeholder="useless placeholder"
