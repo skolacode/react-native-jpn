@@ -1,8 +1,11 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
 
 
 export default () => {
+
+
+  const [todoList, setTodoList] = useState([])
 
   const todoRef = useRef('')
 
@@ -12,6 +15,10 @@ export default () => {
 
   const addTodo = () => {
     console.log('Todo is clicked: ', todoRef.current)
+    // spread operator
+    setTodoList([todoRef.current, ...todoList])
+
+    // setTodoList(['RN', 'java', 'php'])
   }
 
   return (
@@ -27,6 +34,19 @@ export default () => {
       <TouchableOpacity style={styles.button} onPress={addTodo}>
         <Text style={styles.addText}>Add</Text>
       </TouchableOpacity>
+
+      <Text style={{ marginLeft: 20, marginTop: 10, marginBottom: 10 }}>Todo List</Text>
+
+      {
+        todoList.map((value, index) => (
+          <Text 
+            style={{ margin: 5, marginLeft: 20, padding: 5 }} 
+            key={index}
+          >
+            {index+1} - {value}
+          </Text>
+        ))
+      }
     </View>
   )
 }
