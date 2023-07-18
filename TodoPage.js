@@ -1,12 +1,17 @@
+import { useRef } from 'react'
 import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
 
 
 export default () => {
 
-  const onTextChange = () => { }
+  const todoRef = useRef('')
+
+  const onTextChange = (text) => { 
+    todoRef.current = text
+  }
 
   const addTodo = () => {
-    console.log('Todo is clicked')
+    console.log('Todo is clicked: ', todoRef.current)
   }
 
   return (
