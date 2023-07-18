@@ -4,10 +4,21 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={{ backgroundColor: 'yellow', flex: 1 }}> 
+
+      {/* Avatar Container */}
+      <View style={styles.avatarContainer}> 
+        <Image
+          style={{ width: 50, height: 50 }}
+          source={{
+            uri: 'https://reactnative.dev/img/tiny_logo.png',
+          }}
+        />
+
+        <Text>Burhan</Text>
       </View>
 
-      <View style={{ backgroundColor: 'blue', flex: 1 }}> 
+      {/* Pofile details container */}
+      <View style={{ backgroundColor: 'blue' }}> 
         
       </View>
 
@@ -21,6 +32,10 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: 20,
     backgroundColor: '#f2f2f2',
+  },
+  avatarContainer: {
+    justifyContent: "center",
+    alignItems: "center",
   },
   heroTitle: {
     fontSize: 30,
