@@ -2,6 +2,12 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 
 export default function App() {
+
+  // ES6
+  const gotoTodoPage = () => {
+    console.log('i like this click')
+  }
+
   return (
     <View style={styles.container}>
 
@@ -32,7 +38,7 @@ export default function App() {
         </Text>
       </View>
 
-      <TouchableOpacity style={styles.button} onPress={() => {}}>
+      <TouchableOpacity style={styles.button} onPress={gotoTodoPage}>
         <Text style={styles.todoText}>TODOS</Text>
       </TouchableOpacity>
 
